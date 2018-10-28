@@ -1,0 +1,7 @@
+## [1.1.0] - 2018-10-29
+### Added
+- bats unit test for `Tar::Unpack`
+
+## [1.0.0] - 2018-10-28
+### Added
+- `Tar::Unpack`: unpack tarfile and return path to expanded dir.

@@ -2,7 +2,7 @@
 #
 # copyright (c) 2018 Cj-bc
 # This software is released under MIT License
-# @(#) ver.0.1
+# @(#) ver.1.1.0
 
 
 # unpack the tar file
@@ -11,7 +11,7 @@
 # @stdout: -
 Tar::Unpack() {
   local _tarfile_path=$1
-  local _tarfile=${tarfile_path##*/}
+  local _tarfile=${_tarfile_path##*/}
   local -n _pointer=$2
   local _tmp_head
 
@@ -27,7 +27,8 @@ Tar::Unpack() {
     cd "$_tempdir"
 
     tar -xf "$_tarfile"
+    rm "$_tarfile"
   )
-  local unpacked=${_tarfile%%.tar*}
-  pointer=${_tempdir}/${_unpacked}
+  local _unpacked=${_tarfile%%.tar*}
+  _pointer="${_tempdir}"
 }
