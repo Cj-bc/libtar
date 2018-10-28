@@ -11,7 +11,7 @@
 # @stdout: -
 Tar::Unpack() {
   local _tarfile_path=$1
-  local _tarfile=${tarfile_path##*/}
+  local _tarfile=${_tarfile_path##*/}
   local -n _pointer=$2
   local _tmp_head
 
@@ -28,6 +28,6 @@ Tar::Unpack() {
 
     tar -xf "$_tarfile"
   )
-  local unpacked=${_tarfile%%.tar*}
-  pointer=${_tempdir}/${_unpacked}
+  local _unpacked=${_tarfile%%.tar*}
+  _pointer="${_tempdir}"
 }
