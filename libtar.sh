@@ -27,6 +27,7 @@ Tar::Unpack() {
     cd "$_tempdir"
 
     tar -xf "$_tarfile"
+    rm "$_tarfile"
   )
   local _unpacked=${_tarfile%%.tar*}
   _pointer="${_tempdir}"
